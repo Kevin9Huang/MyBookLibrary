@@ -1,0 +1,83 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+.idea/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+Podfile
+# Uncomment if using generated projects by Cocoapods
+# *.xcodeproj/
+
+# Carthage
+Carthage/Build/
+
+# Accio dependency manager
+Dependencies/
+.accio/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/.env
+fastlane/.env.default
+
+# Code Coverage
+*.xccovreport
+*.xccovarchive
+
+# Xcode 15+ new build system logs
+*.xcresult/
+
+# Symbolication
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# SwiftUI Previews
+.swiftpm/xcode/package.pins
+
+# Generated xcfilelists
+*.xcfilelist
+
+# Xcode 15+ new dependency manager
+.xcframeworks/
+
+# Xcode-specific profiles
+.xcprofile
+
+# Xcode's automatically generated schemes
+.xcscheme
+
+# Xcode's SPIs cache
+.spimeta/
+
+# Temporary files
+*.moved-aside
+*.xcuserdatad
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*~.nib
+*.swp
+*.swo
+*.tmp
+*.log
+
