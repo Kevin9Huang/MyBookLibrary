@@ -16,6 +16,18 @@
 		CC375C812C5FB30F008AD74F /* MyBookLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375C802C5FB30F008AD74F /* MyBookLibraryTests.swift */; };
 		CC375C8B2C5FB30F008AD74F /* MyBookLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375C8A2C5FB30F008AD74F /* MyBookLibraryUITests.swift */; };
 		CC375C8D2C5FB30F008AD74F /* MyBookLibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375C8C2C5FB30F008AD74F /* MyBookLibraryUITestsLaunchTests.swift */; };
+		CC375C9D2C5FB3D2008AD74F /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375C9C2C5FB3D2008AD74F /* BookRepository.swift */; };
+		CC375C9F2C5FB3DD008AD74F /* BookServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375C9E2C5FB3DD008AD74F /* BookServiceTest.swift */; };
+		CC375CA32C5FBC63008AD74F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375CA22C5FBC63008AD74F /* Book.swift */; };
+		CC375CA62C5FBE53008AD74F /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC375CA52C5FBE53008AD74F /* BookService.swift */; };
+		CC48899A2C6756080038FC51 /* successResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CC375CA02C5FB3FC008AD74F /* successResponse.json */; };
+		CC55470C2C63B7F200011C8D /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC55470B2C63B7F200011C8D /* XCTestCase+Helper.swift */; };
+		CC5547152C63D0E300011C8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CC5547142C63D0E300011C8D /* Alamofire */; };
+		CCA275782C66257700AC2583 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA275772C66257700AC2583 /* NetworkSession.swift */; };
+		CCA2757A2C66259C00AC2583 /* AlomofireNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA275792C66259C00AC2583 /* AlomofireNetworkSession.swift */; };
+		CCA2757D2C66266400AC2583 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2757C2C66266400AC2583 /* BookListViewModel.swift */; };
+		CCA2757F2C662EEC00AC2583 /* MockNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2757E2C662EEC00AC2583 /* MockNetworkSession.swift */; };
+		CCA275812C662F3100AC2583 /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA275802C662F3100AC2583 /* MockNetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,17 @@
 		CC375C862C5FB30F008AD74F /* MyBookLibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBookLibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC375C8A2C5FB30F008AD74F /* MyBookLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookLibraryUITests.swift; sourceTree = "<group>"; };
 		CC375C8C2C5FB30F008AD74F /* MyBookLibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookLibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CC375C9C2C5FB3D2008AD74F /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		CC375C9E2C5FB3DD008AD74F /* BookServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookServiceTest.swift; path = ../Network/BookServiceTest.swift; sourceTree = "<group>"; };
+		CC375CA02C5FB3FC008AD74F /* successResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = successResponse.json; sourceTree = "<group>"; };
+		CC375CA22C5FBC63008AD74F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		CC375CA52C5FBE53008AD74F /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
+		CC55470B2C63B7F200011C8D /* XCTestCase+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helper.swift"; sourceTree = "<group>"; };
+		CCA275772C66257700AC2583 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		CCA275792C66259C00AC2583 /* AlomofireNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlomofireNetworkSession.swift; sourceTree = "<group>"; };
+		CCA2757C2C66266400AC2583 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
+		CCA2757E2C662EEC00AC2583 /* MockNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkSession.swift; sourceTree = "<group>"; };
+		CCA275802C662F3100AC2583 /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5547152C63D0E300011C8D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +123,10 @@
 		CC375C682C5FB30C008AD74F /* MyBookLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				CCA2757B2C66265D00AC2583 /* ViewModel */,
+				CC375CA42C5FBE3D008AD74F /* Service */,
+				CC375CA12C5FBC55008AD74F /* Model */,
+				CC375C992C5FB3AE008AD74F /* Network */,
 				CC375C692C5FB30C008AD74F /* AppDelegate.swift */,
 				CC375C6B2C5FB30C008AD74F /* SceneDelegate.swift */,
 				CC375C6D2C5FB30C008AD74F /* ViewController.swift */,
@@ -113,6 +141,9 @@
 		CC375C7F2C5FB30F008AD74F /* MyBookLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
+				CCA275842C66453600AC2583 /* Service */,
+				CC55470D2C63B7FE00011C8D /* Shared */,
+				CC375C9B2C5FB3C0008AD74F /* Network */,
 				CC375C802C5FB30F008AD74F /* MyBookLibraryTests.swift */,
 			);
 			path = MyBookLibraryTests;
@@ -125,6 +156,66 @@
 				CC375C8C2C5FB30F008AD74F /* MyBookLibraryUITestsLaunchTests.swift */,
 			);
 			path = MyBookLibraryUITests;
+			sourceTree = "<group>";
+		};
+		CC375C992C5FB3AE008AD74F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CC375C9C2C5FB3D2008AD74F /* BookRepository.swift */,
+				CCA275772C66257700AC2583 /* NetworkSession.swift */,
+				CCA275792C66259C00AC2583 /* AlomofireNetworkSession.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CC375C9B2C5FB3C0008AD74F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CCA2757E2C662EEC00AC2583 /* MockNetworkSession.swift */,
+				CCA275802C662F3100AC2583 /* MockNetworkRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CC375CA12C5FBC55008AD74F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC375CA22C5FBC63008AD74F /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC375CA42C5FBE3D008AD74F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CC375CA52C5FBE53008AD74F /* BookService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CC55470D2C63B7FE00011C8D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CC55470B2C63B7F200011C8D /* XCTestCase+Helper.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CCA2757B2C66265D00AC2583 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CCA2757C2C66266400AC2583 /* BookListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CCA275842C66453600AC2583 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CC375C9E2C5FB3DD008AD74F /* BookServiceTest.swift */,
+				CC375CA02C5FB3FC008AD74F /* successResponse.json */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +234,9 @@
 			dependencies = (
 			);
 			name = MyBookLibrary;
+			packageProductDependencies = (
+				CC5547142C63D0E300011C8D /* Alamofire */,
+			);
 			productName = MyBookLibrary;
 			productReference = CC375C662C5FB30C008AD74F /* MyBookLibrary.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +309,9 @@
 				Base,
 			);
 			mainGroup = CC375C5D2C5FB30C008AD74F;
+			packageReferences = (
+				CC5547132C63D0E300011C8D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CC375C672C5FB30C008AD74F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC48899A2C6756080038FC51 /* successResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC375CA32C5FBC63008AD74F /* Book.swift in Sources */,
 				CC375C6E2C5FB30C008AD74F /* ViewController.swift in Sources */,
+				CC375CA62C5FBE53008AD74F /* BookService.swift in Sources */,
+				CCA2757A2C66259C00AC2583 /* AlomofireNetworkSession.swift in Sources */,
+				CC375C9D2C5FB3D2008AD74F /* BookRepository.swift in Sources */,
+				CCA275782C66257700AC2583 /* NetworkSession.swift in Sources */,
 				CC375C6A2C5FB30C008AD74F /* AppDelegate.swift in Sources */,
 				CC375C6C2C5FB30C008AD74F /* SceneDelegate.swift in Sources */,
+				CCA2757D2C66266400AC2583 /* BookListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +372,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA275812C662F3100AC2583 /* MockNetworkRequest.swift in Sources */,
+				CC55470C2C63B7F200011C8D /* XCTestCase+Helper.swift in Sources */,
 				CC375C812C5FB30F008AD74F /* MyBookLibraryTests.swift in Sources */,
+				CC375C9F2C5FB3DD008AD74F /* BookServiceTest.swift in Sources */,
+				CCA2757F2C662EEC00AC2583 /* MockNetworkSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -425,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -449,6 +557,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,6 +585,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +607,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huang.personal.MyBookLibraryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huang.personal.MyBookLibraryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,6 +711,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC5547132C63D0E300011C8D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC5547142C63D0E300011C8D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC5547132C63D0E300011C8D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC375C5E2C5FB30C008AD74F /* Project object */;
 }
