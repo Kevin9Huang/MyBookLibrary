@@ -64,9 +64,12 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let book = books[indexPath.item]
-        let detailVc = BookDetailPageViewController.make()
-        detailVc.book = book
-        present(detailVc, animated: true)
+        let detailVC = BookDetailPageViewController.make()
+        detailVC.book = book
+        detailVC.onDismiss = {
+            collectionView.reloadData()
+        }
+        present(detailVC, animated: true)
     }
 }
 

@@ -18,6 +18,8 @@ class BookDetailPageViewController: UIViewController {
     @IBOutlet weak var heartIcon: UIImageView!
     
     var book: Book?
+    var onDismiss: (() -> Void)?
+    private let favoritesManager = FavoritesManager()
     
     static func make() -> BookDetailPageViewController {
         let className = String(describing: self)
@@ -28,6 +30,7 @@ class BookDetailPageViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         configureHeartIcon()
+        updateFavoriteStatus()
     }
     
     private func configureView() {
@@ -44,20 +47,30 @@ class BookDetailPageViewController: UIViewController {
         favouriteTapAreaContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(favouriteTapped)))
     }
     
-    var selected = false
+    private func updateFavoriteStatus() {
+        guard let book else { return }
+        let isFavorite = favoritesManager.isFavorite(bookId: book.id)
+        let image = isFavorite ? "heart.fill" : "heart"
+        heartIcon.image = UIImage(systemName: image)
+    }
+    
     @objc
     private func favouriteTapped() {
-        selected.toggle()
-        if selected {
-            heartIcon.image = UIImage(systemName: "heart.fill")
-        } else {
-            heartIcon.image = UIImage(systemName: "heart")
-        }
+        guard let book else { return }
+        favoritesManager.toggleFavorite(for: book.id)
+        updateFavoriteStatus()
     }
     
     private func configureBookCoverImage() {
         guard let book, let url = URL(string: book.cover) else { return }
         
         bookImageView.setImageFromUrl(url: url)
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        
+        guard let onDismiss else { return }
+        onDismiss()
     }
 }
