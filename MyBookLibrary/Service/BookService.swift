@@ -1,40 +1,63 @@
 //
-//  BookService.swift
+//  FetchBookService.swift
 //  MyBookLibrary
 //
-//  Created by Kevin Huang on 04/08/24.
+//  Created by Kevin Huang on 11/08/24.
 //
 
 import Foundation
+import Alamofire
 
 protocol BookServiceProtocol {
-    func fetchBooks() async throws -> [Book]
+    func fetchBooks(completion: @escaping (Result<[Book], Error>) -> Void)
 }
 
-final class BookService: BookServiceProtocol {
-    private let networkSession: NetworkSession
-    private let url: URL
+class BookService: BookServiceProtocol {
+    private let cache: URLCache
+    private let session: Session
+    private let adapter: BookAdapterProtocol
     
-    init(networkSession: NetworkSession, url: URL) {
-        self.networkSession = networkSession
-        self.url = url
+    init(session: Session = .default, 
+         cache: URLCache = .shared,
+         adapter: BookAdapterProtocol = BookAdapter()) {
+        self.session = session
+        self.cache = cache
+        self.adapter = adapter
     }
     
-    func fetchBooks() async throws -> [Book] {
-        let request = networkSession.request(url)
-        let data = try await request.responseData()
+    func fetchBooks(completion: @escaping (Result<[Book], Error>) -> Void) {
+        let url = URL(string: "https://my-json-server.typicode.com/cutamar/mock/books")!
+        let request = URLRequest(url: url)
         
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(customDateFormatter)
-        
-        let books = try decoder.decode([Book].self, from: data)
-        return books
+        if let cachedResponse = cache.cachedResponse(for: request) {
+            print("Found cache")
+            do {
+                let books = try adapter.adapt(data: cachedResponse.data)
+                completion(.success(books))
+            }
+            catch {
+                //TODO: use enum error instead
+                completion(.failure(NSError(domain: "com.bookservice.error", code: 1001, userInfo: nil)))
+            }
+        } else {
+            print("@@@ fetching datae")
+            session.request(request).validate().responseData { response in
+                switch response.result {
+                case .success(let data):
+                    do {
+                        let books = try self.adapter.adapt(data: data)
+                        let cachedResponse = CachedURLResponse(response: response.response!, data: data)
+                        self.cache.storeCachedResponse(cachedResponse, for: request)
+                        completion(.success(books))
+                    }
+                    catch {
+                        //TODO: use enum error instead
+                        completion(.failure(NSError(domain: "com.bookservice.error", code: 1001, userInfo: nil)))
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
     }
-    
-    private let customDateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return dateFormatter
-    }()
 }
