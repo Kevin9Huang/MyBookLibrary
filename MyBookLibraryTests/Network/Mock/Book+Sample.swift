@@ -15,8 +15,8 @@ extension Book {
             id: Int.random(in: 1...1000),
             title: "Title \(randomId)",
             author: "Author \(randomId)",
-            description:  "Description for book \(randomId).",
-            cover: URL(string: "https://www.example.com/image\(randomId).jpg")!,
+            bookDescription:  "Description for book \(randomId).",
+            cover: "https://www.example.com/image\(randomId).jpg",
             publicationDate: Date().addingTimeInterval(-TimeInterval.random(in: 0...1_000))
         )
     }
