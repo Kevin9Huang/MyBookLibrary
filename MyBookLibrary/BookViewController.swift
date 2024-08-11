@@ -36,8 +36,6 @@ final class BookViewController: UIViewController {
     private func setupViewModel() {
         viewModel.onBooksUpdated = { [weak self] in
             guard let self else { return }
-            print("@@@@ onBooksUpdated count: \(viewModel.books.count)")
-            
             self.books = self.viewModel.books
             self.collectionView.reloadData()
         }
@@ -65,7 +63,10 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let book = books[indexPath.item]
+        let detailVc = BookDetailPageViewController.make()
+        detailVc.book = book
+        present(detailVc, animated: true)
     }
 }
 

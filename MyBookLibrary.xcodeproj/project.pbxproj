@@ -20,8 +20,9 @@
 		CC5547152C63D0E300011C8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CC5547142C63D0E300011C8D /* Alamofire */; };
 		CCA2757D2C66266400AC2583 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2757C2C66266400AC2583 /* BookListViewModel.swift */; };
 		CCC655B22C68D810007471CB /* BookDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC655B02C68D810007471CB /* BookDetailPageViewController.swift */; };
-		CCC655B32C68D810007471CB /* BookDetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCC655B12C68D810007471CB /* BookDetailPageViewController.xib */; };
 		CCC655B72C68DA0D007471CB /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC655B62C68DA0D007471CB /* UIImageView+DownloadImage.swift */; };
+		CCC655B92C68DD68007471CB /* BookDetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCC655B82C68DD68007471CB /* BookDetailPageViewController.xib */; };
+		CCC655BB2C68DE87007471CB /* Date+FormattedDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC655BA2C68DE87007471CB /* Date+FormattedDisplay.swift */; };
 		CCD3698C2C68B5DD008B280A /* BookAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3698B2C68B5DD008B280A /* BookAdapter.swift */; };
 		CCD3698E2C68B65F008B280A /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3698D2C68B65F008B280A /* BookService.swift */; };
 		CCD369962C68BA97008B280A /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD369942C68BA97008B280A /* BookCollectionViewCell.swift */; };
@@ -64,8 +65,9 @@
 		CC55470B2C63B7F200011C8D /* XCTestCase+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helper.swift"; sourceTree = "<group>"; };
 		CCA2757C2C66266400AC2583 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 		CCC655B02C68D810007471CB /* BookDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailPageViewController.swift; sourceTree = "<group>"; };
-		CCC655B12C68D810007471CB /* BookDetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailPageViewController.xib; sourceTree = "<group>"; };
 		CCC655B62C68DA0D007471CB /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		CCC655B82C68DD68007471CB /* BookDetailPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailPageViewController.xib; sourceTree = "<group>"; };
+		CCC655BA2C68DE87007471CB /* Date+FormattedDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedDisplay.swift"; sourceTree = "<group>"; };
 		CCD3698B2C68B5DD008B280A /* BookAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAdapter.swift; sourceTree = "<group>"; };
 		CCD3698D2C68B65F008B280A /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		CCD369942C68BA97008B280A /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -208,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				CCC655B02C68D810007471CB /* BookDetailPageViewController.swift */,
-				CCC655B12C68D810007471CB /* BookDetailPageViewController.xib */,
+				CCC655B82C68DD68007471CB /* BookDetailPageViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				CCC655B62C68DA0D007471CB /* UIImageView+DownloadImage.swift */,
+				CCC655BA2C68DE87007471CB /* Date+FormattedDisplay.swift */,
 			);
 			path = "Shared Extension";
 			sourceTree = "<group>";
@@ -380,7 +383,7 @@
 				CCD369972C68BA97008B280A /* BookCollectionViewCell.xib in Resources */,
 				CC375C762C5FB30E008AD74F /* Base in Resources */,
 				CC375C712C5FB30C008AD74F /* Base in Resources */,
-				CCC655B32C68D810007471CB /* BookDetailPageViewController.xib in Resources */,
+				CCC655B92C68DD68007471CB /* BookDetailPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +414,7 @@
 				CCD3698C2C68B5DD008B280A /* BookAdapter.swift in Sources */,
 				CCC655B22C68D810007471CB /* BookDetailPageViewController.swift in Sources */,
 				CC375C6A2C5FB30C008AD74F /* AppDelegate.swift in Sources */,
+				CCC655BB2C68DE87007471CB /* Date+FormattedDisplay.swift in Sources */,
 				CCC655B72C68DA0D007471CB /* UIImageView+DownloadImage.swift in Sources */,
 				CCD369962C68BA97008B280A /* BookCollectionViewCell.swift in Sources */,
 				CC375C6C2C5FB30C008AD74F /* SceneDelegate.swift in Sources */,

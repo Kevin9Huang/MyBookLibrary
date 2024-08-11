@@ -22,7 +22,10 @@ class BookCollectionViewCell: UICollectionViewCell {
     
     func updateCellWith(_ book: Book) {
         bookTitleLabel.text = book.title
-        bookImageView.setImageFromUrl(url: book.cover)
+        
+        if let bookCoverUrl = URL(string: book.cover) {
+            bookImageView.setImageFromUrl(url: bookCoverUrl)
+        }
     }
     
     @objc
