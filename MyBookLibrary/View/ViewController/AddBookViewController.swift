@@ -19,6 +19,9 @@ final class AddBookViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     private let bookSaver: BookSaverProtocol = BookSaverManager()
+    private var selectedImage: UIImage?
+    
+    var onDismiss: (() -> Void)?
     
     static func make() -> AddBookViewController {
         let className = String(describing: self)
@@ -58,11 +61,23 @@ final class AddBookViewController: UIViewController {
             )
             return
         }
+        
+        
         //TODO: change id to UUID
         //TODO: set publication date with date picker
-        let book = Book(id: Int.random(in: 1...1000), title: title, author: author, bookDescription: bookDescription, cover: "", publicationDate: Date())
-        bookSaver.saveBook(book) {
-            showAlert(title: "Information", message: "Book saved successfully")
+        var book = Book(id: Int.random(in: 1...1000), title: title, author: author, bookDescription: bookDescription, cover: "", publicationDate: Date())
+        
+        if let selectedImage {
+            if let imageData = selectedImage.pngData() {
+                book.localImageData = imageData
+            }
+        }
+        
+        bookSaver.saveBook(book) { [weak self] in
+            self?.showAlert(
+                title: "Information",
+                message: "Book saved successfully"
+            )
         }
     }
     
@@ -71,5 +86,36 @@ final class AddBookViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func uploadImageTapped(_ sender: Any) {
+        presentImagePicker()
+    }
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag)
+        onDismiss?()
+    }
+}
+
+extension AddBookViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func presentImagePicker() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            self.selectedImage = image
+            uploadBookButton.setTitle("Image had been set", for: .normal)
+            uploadBookButton.setImage(UIImage(systemName: "checkmark.seal.fill"), for: .normal)
+        }
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
     }
 }

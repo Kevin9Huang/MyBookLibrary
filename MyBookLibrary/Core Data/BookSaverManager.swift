@@ -10,7 +10,7 @@ import CoreData
 import UIKit
 
 protocol BookSaverProtocol {
-    func saveBook(_ book: Book, completion: () -> Void)
+    func saveBook(_ book: Book, completion: (() -> Void)?)
     func getAllBooks() -> [Book]
 }
 
@@ -26,17 +26,18 @@ final class BookSaverManager: BookSaverProtocol {
         }
     }
 
-    func saveBook(_ book: Book, completion: () -> Void) {
+    func saveBook(_ book: Book, completion: (() -> Void)? = nil) {
         let context = persistentContainer.viewContext
         let bookEntity = BookEntity(context: context)
         bookEntity.id = Int16(book.id)
         bookEntity.title = book.title
         bookEntity.author = book.author
         bookEntity.publicationDate = book.publicationDate
-
+        bookEntity.imageData = book.localImageData
+        
         do {
             try context.save()
-            completion()
+            completion?()
             print("Saved book: \(book)")
         } catch {
             print("Failed to save book: \(error)")
@@ -52,7 +53,8 @@ final class BookSaverManager: BookSaverProtocol {
             return bookEntities.compactMap { entity -> Book? in
                 guard let title = entity.title,
                       let author = entity.author,
-                      let publicationDate = entity.publicationDate else { return nil }
+                      let publicationDate = entity.publicationDate
+                else { return nil }
 
                 let id = Int(entity.id)
                 var book = Book(
@@ -61,9 +63,9 @@ final class BookSaverManager: BookSaverProtocol {
                     author: author,
                     bookDescription: entity.bookDescription ?? "",
                     cover: "",
-                    publicationDate: publicationDate
+                    publicationDate: publicationDate,
+                    localImageData: entity.imageData
                 )
-                book.isFromLocal = true
                 return book
             }
         } catch {

@@ -26,7 +26,7 @@ final class BookViewModel {
         self.bookSaver = bookSaver
     }
     
-    func onViewDidLoad() {
+    func loadBooks() {
         var savedBooks = bookSaver.getAllBooks()
         bookService.fetchBooks { [weak self] result in
             switch result {

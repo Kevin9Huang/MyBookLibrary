@@ -27,14 +27,16 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookId = book.id
         bookTitleLabel.text = book.title
         
-        if let bookCoverUrl = URL(string: book.cover) {
+        if let imageData = book.localImageData,
+           let image = UIImage(data: imageData) {
+            bookImageView.image = image
+        } else if let bookCoverUrl = URL(string: book.cover) {
             bookImageView.setImageFromUrl(url: bookCoverUrl)
         }
         updateFavoriteStatus()
     }
     
     @IBAction func favouriteTapped(_ sender: Any) {
-        print("@@@@ favourite tappeed")
         guard let bookId = bookId else { return }
         favoritesManager.toggleFavorite(for: bookId)
         updateFavoriteStatus()

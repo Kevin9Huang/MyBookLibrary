@@ -45,11 +45,14 @@ final class BookViewController: UIViewController {
             self.books = self.viewModel.books
             self.collectionView.reloadData()
         }
-        viewModel.onViewDidLoad()
+        viewModel.loadBooks()
     }
     
     @IBAction func addBookTapped(_ sender: Any) {
         let addBookVC = AddBookViewController.make()
+        addBookVC.onDismiss = { [weak self] in
+            self?.viewModel.loadBooks()
+        }
         present(addBookVC, animated: true)
     }
 }

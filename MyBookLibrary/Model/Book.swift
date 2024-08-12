@@ -16,7 +16,6 @@ struct Book: Codable, Equatable {
     let publicationDate: Date
     
     //Saved local book
-    var isFromLocal: Bool = false
     var localImageData: Data? = nil
     
     enum CodingKeys: String, CodingKey {

@@ -62,9 +62,16 @@ class BookDetailPageViewController: UIViewController {
     }
     
     private func configureBookCoverImage() {
-        guard let book, let url = URL(string: book.cover) else { return }
+        guard let book else { return }
         
-        bookImageView.setImageFromUrl(url: url)
+        if let imageData = book.localImageData,
+           let image = UIImage(data: imageData) {
+            bookImageView.image = image
+
+        }
+        else if let url = URL(string: book.cover) {
+            bookImageView.setImageFromUrl(url: url)
+        }
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
