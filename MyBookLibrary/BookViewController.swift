@@ -10,6 +10,7 @@ import UIKit
 final class BookViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addBookButton: UIButton!
     
     private var books: [Book] = []
     private let viewModel = BookViewModel(bookService: BookService())
@@ -18,6 +19,7 @@ final class BookViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         setupViewModel()
+        setupAddBookButton()
     }
     
     private func setupCollectionView() {
@@ -32,6 +34,10 @@ final class BookViewController: UIViewController {
         let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
     }
+    private func setupAddBookButton() {
+        addBookButton.layer.cornerRadius = addBookButton.frame.width / 2
+        addBookButton.setTitle("", for: .normal)
+    }
     
     private func setupViewModel() {
         viewModel.onBooksUpdated = { [weak self] in
@@ -41,11 +47,11 @@ final class BookViewController: UIViewController {
         }
         viewModel.onViewDidLoad()
     }
-
-    @IBAction func onFetchBookTapped(_ sender: Any) {
-        viewModel.onViewDidLoad()
-    }
     
+    @IBAction func addBookTapped(_ sender: Any) {
+        let addBookVC = AddBookViewController.make()
+        present(addBookVC, animated: true)
+    }
 }
 
 extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource {

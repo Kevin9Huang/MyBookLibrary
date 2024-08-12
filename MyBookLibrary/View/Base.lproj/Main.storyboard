@@ -38,17 +38,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI4-VW-X0c">
+                                <rect key="frame" x="293" y="698" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="RGq-2t-hR1"/>
+                                    <constraint firstAttribute="height" constant="60" id="XlP-li-NOI"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="darkTextColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addBookTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QUV-hl-uSy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JI4-VW-X0c" secondAttribute="bottom" constant="60" id="FN1-ql-DVD"/>
                             <constraint firstAttribute="bottom" secondItem="gPq-6J-GYe" secondAttribute="bottom" id="I1F-vh-db5"/>
                             <constraint firstItem="gPq-6J-GYe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LyP-EB-w7D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JI4-VW-X0c" secondAttribute="trailing" constant="40" id="OdI-Wu-oTZ"/>
                             <constraint firstAttribute="trailing" secondItem="gPq-6J-GYe" secondAttribute="trailing" id="Y3h-Cw-o9F"/>
-                            <constraint firstItem="gPq-6J-GYe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="po1-yb-eoP"/>
+                            <constraint firstItem="gPq-6J-GYe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="po1-yb-eoP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addBookButton" destination="JI4-VW-X0c" id="g9T-BY-cP5"/>
                         <outlet property="collectionView" destination="gPq-6J-GYe" id="0Sn-du-D9J"/>
                     </connections>
                 </viewController>
@@ -58,8 +75,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -29,6 +29,10 @@
 		CCD3698E2C68B65F008B280A /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3698D2C68B65F008B280A /* BookService.swift */; };
 		CCD369962C68BA97008B280A /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD369942C68BA97008B280A /* BookCollectionViewCell.swift */; };
 		CCD369972C68BA97008B280A /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD369952C68BA97008B280A /* BookCollectionViewCell.xib */; };
+		CCF0E5C92C69A9B7006AA374 /* BookDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCF0E5C72C69A9B7006AA374 /* BookDataModel.xcdatamodeld */; };
+		CCF0E5CC2C69AA8B006AA374 /* BookSaverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0E5CB2C69AA8B006AA374 /* BookSaverManager.swift */; };
+		CCF0E5CE2C69ACC7006AA374 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0E5CD2C69ACC7006AA374 /* AddBookViewController.swift */; };
+		CCF0E5D02C69ACD9006AA374 /* AddBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF0E5CF2C69ACD9006AA374 /* AddBookViewController.xib */; };
 		CCF68DBC2C676364005AB986 /* MockBookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF68DBB2C676364005AB986 /* MockBookService.swift */; };
 		CCF68DBF2C677642005AB986 /* Book+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF68DBE2C677642005AB986 /* Book+Sample.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +80,10 @@
 		CCD3698D2C68B65F008B280A /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		CCD369942C68BA97008B280A /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		CCD369952C68BA97008B280A /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		CCF0E5C82C69A9B7006AA374 /* BookDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CCF0E5CB2C69AA8B006AA374 /* BookSaverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSaverManager.swift; sourceTree = "<group>"; };
+		CCF0E5CD2C69ACC7006AA374 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		CCF0E5CF2C69ACD9006AA374 /* AddBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBookViewController.xib; sourceTree = "<group>"; };
 		CCF68DBB2C676364005AB986 /* MockBookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBookService.swift; sourceTree = "<group>"; };
 		CCF68DBE2C677642005AB986 /* Book+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Sample.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +137,7 @@
 		CC375C682C5FB30C008AD74F /* MyBookLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				CCF0E5CA2C69A9BC006AA374 /* Core Data */,
 				CCC655B52C68D9FC007471CB /* Shared Extension */,
 				CCD369902C68BA4E008B280A /* Utility */,
 				CCD3698F2C68BA47008B280A /* View */,
@@ -216,6 +225,8 @@
 			children = (
 				CCC655B02C68D810007471CB /* BookDetailPageViewController.swift */,
 				CCC655B82C68DD68007471CB /* BookDetailPageViewController.xib */,
+				CCF0E5CD2C69ACC7006AA374 /* AddBookViewController.swift */,
+				CCF0E5CF2C69ACD9006AA374 /* AddBookViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -272,6 +283,15 @@
 				CCD369952C68BA97008B280A /* BookCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		CCF0E5CA2C69A9BC006AA374 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				CCF0E5C72C69A9B7006AA374 /* BookDataModel.xcdatamodeld */,
+				CCF0E5CB2C69AA8B006AA374 /* BookSaverManager.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		CCF68DBD2C677608005AB986 /* Mock */ = {
@@ -394,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC375C732C5FB30E008AD74F /* Assets.xcassets in Resources */,
+				CCF0E5D02C69ACD9006AA374 /* AddBookViewController.xib in Resources */,
 				CCD369972C68BA97008B280A /* BookCollectionViewCell.xib in Resources */,
 				CC375C762C5FB30E008AD74F /* Base in Resources */,
 				CC375C712C5FB30C008AD74F /* Base in Resources */,
@@ -423,14 +444,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC375CA32C5FBC63008AD74F /* Book.swift in Sources */,
+				CCF0E5CE2C69ACC7006AA374 /* AddBookViewController.swift in Sources */,
 				CC375C6E2C5FB30C008AD74F /* BookViewController.swift in Sources */,
 				CCD3698E2C68B65F008B280A /* BookService.swift in Sources */,
 				CCC655BD2C690D0C007471CB /* FavoritesManager.swift in Sources */,
 				CCD3698C2C68B5DD008B280A /* BookAdapter.swift in Sources */,
 				CCC655B22C68D810007471CB /* BookDetailPageViewController.swift in Sources */,
 				CC375C6A2C5FB30C008AD74F /* AppDelegate.swift in Sources */,
+				CCF0E5C92C69A9B7006AA374 /* BookDataModel.xcdatamodeld in Sources */,
 				CCC655BB2C68DE87007471CB /* Date+FormattedDisplay.swift in Sources */,
 				CCC655B72C68DA0D007471CB /* UIImageView+DownloadImage.swift in Sources */,
+				CCF0E5CC2C69AA8B006AA374 /* BookSaverManager.swift in Sources */,
 				CCD369962C68BA97008B280A /* BookCollectionViewCell.swift in Sources */,
 				CC375C6C2C5FB30C008AD74F /* SceneDelegate.swift in Sources */,
 				CCA2757D2C66266400AC2583 /* BookListViewModel.swift in Sources */,
@@ -798,6 +822,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CCF0E5C72C69A9B7006AA374 /* BookDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CCF0E5C82C69A9B7006AA374 /* BookDataModel.xcdatamodel */,
+			);
+			currentVersion = CCF0E5C82C69A9B7006AA374 /* BookDataModel.xcdatamodel */;
+			path = BookDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CC375C5E2C5FB30C008AD74F /* Project object */;
 }
