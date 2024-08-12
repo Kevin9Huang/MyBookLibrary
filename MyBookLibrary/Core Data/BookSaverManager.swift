@@ -9,7 +9,12 @@ import Foundation
 import CoreData
 import UIKit
 
-class BookSaverManager {
+protocol BookSaverProtocol {
+    func saveBook(_ book: Book, completion: () -> Void)
+    func getAllBooks() -> [Book]
+}
+
+final class BookSaverManager: BookSaverProtocol {
     private let persistentContainer: NSPersistentContainer
 
     init(container: NSPersistentContainer = NSPersistentContainer(name: "BookDataModel")) {
@@ -21,7 +26,7 @@ class BookSaverManager {
         }
     }
 
-    func saveBook(_ book: Book) {
+    func saveBook(_ book: Book, completion: () -> Void) {
         let context = persistentContainer.viewContext
         let bookEntity = BookEntity(context: context)
         bookEntity.id = Int16(book.id)
@@ -31,6 +36,8 @@ class BookSaverManager {
 
         do {
             try context.save()
+            completion()
+            print("Saved book: \(book)")
         } catch {
             print("Failed to save book: \(error)")
         }

@@ -13,7 +13,7 @@ final class BookViewController: UIViewController {
     @IBOutlet weak var addBookButton: UIButton!
     
     private var books: [Book] = []
-    private let viewModel = BookViewModel(bookService: BookService())
+    private let viewModel = BookViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,6 +29,7 @@
 		CCD3698E2C68B65F008B280A /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3698D2C68B65F008B280A /* BookService.swift */; };
 		CCD369962C68BA97008B280A /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD369942C68BA97008B280A /* BookCollectionViewCell.swift */; };
 		CCD369972C68BA97008B280A /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD369952C68BA97008B280A /* BookCollectionViewCell.xib */; };
+		CCD4A4212C6A1B0D00B94523 /* BookSaverManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD4A4202C6A1B0D00B94523 /* BookSaverManagerTest.swift */; };
 		CCF0E5C92C69A9B7006AA374 /* BookDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCF0E5C72C69A9B7006AA374 /* BookDataModel.xcdatamodeld */; };
 		CCF0E5CC2C69AA8B006AA374 /* BookSaverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0E5CB2C69AA8B006AA374 /* BookSaverManager.swift */; };
 		CCF0E5CE2C69ACC7006AA374 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0E5CD2C69ACC7006AA374 /* AddBookViewController.swift */; };
@@ -80,6 +81,7 @@
 		CCD3698D2C68B65F008B280A /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		CCD369942C68BA97008B280A /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		CCD369952C68BA97008B280A /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		CCD4A4202C6A1B0D00B94523 /* BookSaverManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSaverManagerTest.swift; sourceTree = "<group>"; };
 		CCF0E5C82C69A9B7006AA374 /* BookDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CCF0E5CB2C69AA8B006AA374 /* BookSaverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSaverManager.swift; sourceTree = "<group>"; };
 		CCF0E5CD2C69ACC7006AA374 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		CC375C7F2C5FB30F008AD74F /* MyBookLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
+				CCD4A41F2C6A1B0200B94523 /* Core Data */,
 				CCC655BE2C690D36007471CB /* Utility */,
 				CC55470D2C63B7FE00011C8D /* Shared */,
 				CC375C9B2C5FB3C0008AD74F /* Network */,
@@ -283,6 +286,14 @@
 				CCD369952C68BA97008B280A /* BookCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		CCD4A41F2C6A1B0200B94523 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				CCD4A4202C6A1B0D00B94523 /* BookSaverManagerTest.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		CCF0E5CA2C69A9BC006AA374 /* Core Data */ = {
@@ -466,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC55470C2C63B7F200011C8D /* XCTestCase+Helper.swift in Sources */,
+				CCD4A4212C6A1B0D00B94523 /* BookSaverManagerTest.swift in Sources */,
 				CCF68DBF2C677642005AB986 /* Book+Sample.swift in Sources */,
 				CCF68DBC2C676364005AB986 /* MockBookService.swift in Sources */,
 				CCC655C02C690D4A007471CB /* FavoritesManagerTest.swift in Sources */,

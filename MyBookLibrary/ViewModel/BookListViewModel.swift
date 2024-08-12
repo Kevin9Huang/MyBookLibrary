@@ -7,8 +7,9 @@
 
 import Foundation
 
-class BookViewModel {
+final class BookViewModel {
     private let bookService: BookServiceProtocol
+    private let bookSaver: BookSaverProtocol
     
     var books: [Book] = [] {
         didSet {
@@ -17,18 +18,25 @@ class BookViewModel {
     }
     var onBooksUpdated: (() -> Void)?
     
-    init(bookService: BookServiceProtocol) {
+    init(
+        bookService: BookServiceProtocol = BookService(),
+        bookSaver: BookSaverProtocol = BookSaverManager()
+    ) {
         self.bookService = bookService
+        self.bookSaver = bookSaver
     }
     
     func onViewDidLoad() {
+        var savedBooks = bookSaver.getAllBooks()
         bookService.fetchBooks { [weak self] result in
             switch result {
             case .success(let books):
-                self?.books = books
+                savedBooks.append(contentsOf: books)
+                self?.books = savedBooks
             case .failure(let error):
                 print("Failed to fetch books: \(error)")
             }
         }
+        
     }
 }
