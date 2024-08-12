@@ -66,8 +66,8 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let book = books[indexPath.item]
-        cell.updateCellWith(book)
+        var book = books[indexPath.item]
+        cell.updateCellWith(&book)
         return cell
     }
     

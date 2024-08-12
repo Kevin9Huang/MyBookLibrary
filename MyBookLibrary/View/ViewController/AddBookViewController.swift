@@ -20,6 +20,7 @@ final class AddBookViewController: UIViewController {
     
     private let bookSaver: BookSaverProtocol = BookSaverManager()
     private var selectedImage: UIImage?
+    private var selectedPublishDate: Date?
     
     var onDismiss: (() -> Void)?
     
@@ -38,7 +39,6 @@ final class AddBookViewController: UIViewController {
         setBorderColorTo(titleTextField)
         setBorderColorTo(authorTextField)
         setBorderColorTo(descriptionTextField)
-        setBorderColorTo(publicationTextField)
     }
     
     private func setBorderColorTo(_ view: UIView) {
@@ -49,11 +49,10 @@ final class AddBookViewController: UIViewController {
         guard let title = titleTextField.text,
               let author = authorTextField.text,
               let bookDescription = descriptionTextField.text,
-              let publicationDate = publicationTextField.text,
+              let publicationDate = selectedPublishDate,
               !title.isEmpty,
               !author.isEmpty,
-              !bookDescription.isEmpty,
-              !publicationDate.isEmpty
+              !bookDescription.isEmpty
         else {
             self.showAlert(
                 title: "Warning",
@@ -63,9 +62,7 @@ final class AddBookViewController: UIViewController {
         }
         
         
-        //TODO: change id to UUID
-        //TODO: set publication date with date picker
-        var book = Book(id: Int.random(in: 1...1000), title: title, author: author, bookDescription: bookDescription, cover: "", publicationDate: Date())
+        var book = Book(id: Int.random(in: 1...1000), title: title, author: author, bookDescription: bookDescription, cover: "", publicationDate: publicationDate)
         
         if let selectedImage {
             if let imageData = selectedImage.pngData() {
@@ -95,6 +92,11 @@ final class AddBookViewController: UIViewController {
         super.dismiss(animated: flag)
         onDismiss?()
     }
+    
+    @IBAction func onPublishDateSelected(_ sender: UIDatePicker) {
+        self.selectedPublishDate = sender.date
+    }
+    
 }
 
 extension AddBookViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
