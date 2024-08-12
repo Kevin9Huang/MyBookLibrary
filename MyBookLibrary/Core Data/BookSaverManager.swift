@@ -57,7 +57,7 @@ final class BookSaverManager: BookSaverProtocol {
                 else { return nil }
 
                 let id = Int(entity.id)
-                var book = Book(
+                let book = Book(
                     id: id,
                     title: title,
                     author: author,

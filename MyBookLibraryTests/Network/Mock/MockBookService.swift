@@ -8,16 +8,12 @@
 import Foundation
 @testable import MyBookLibrary
 
-class MockBookService: BookServiceProtocol {
-    var books: [Book] = []
-    var error: Error?
-    var fetchBooksCallCount = 0
+final class MockBookService: BookServiceProtocol {
+    var fetchBooksResult: Result<[Book], Error>?
     
-    func fetchBooks(completion: @escaping (Result<[MyBookLibrary.Book], any Error>) -> Void) {
-        if let error = error {
-            completion(.failure(error))
+    func fetchBooks(completion: @escaping (Result<[Book], Error>) -> Void) {
+        if let result = fetchBooksResult {
+            completion(result)
         }
-        
-        completion(.success(books))
     }
 }

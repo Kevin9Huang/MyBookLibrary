@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class BookViewModel {
+final class BookListViewModel {
     private let bookService: BookServiceProtocol
     private let bookSaver: BookSaverProtocol
     

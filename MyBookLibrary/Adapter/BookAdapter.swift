@@ -11,7 +11,7 @@ protocol BookAdapterProtocol {
     func adapt(data: Data) throws -> [Book]
 }
 
-class BookAdapter: BookAdapterProtocol {
+final class BookAdapter: BookAdapterProtocol {
     func adapt(data: Data) throws -> [Book] {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(customDateFormatter)
